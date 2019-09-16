@@ -7,8 +7,11 @@ class Logout extends Component {
         this.googleLogoutResponse = this.googleLogoutResponse.bind(this);
     }
     googleLogoutResponse(response) {
+        localStorage.removeItem('userName');
+        localStorage.removeItem('userEmail');
+        localStorage.removeItem('userImage');
         localStorage.removeItem('token');
-        localStorage.removeItem('user');
+        
         this.props.action(false);
     }
     render(){

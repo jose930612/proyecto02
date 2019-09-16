@@ -28,7 +28,7 @@ class ArticleForm extends Component {
             body: this.state.articleBody
         };
         
-        fetch('http://backtelematica.josemejiao.info/articles', {
+        fetch('/api/articles', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

@@ -1,6 +1,27 @@
 version: '3'
 
 services:
+  nginx-server:
+    container_name: nginx-server
+    image: nginx
+    volumes:
+      - ./frontend/nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - 80:80
+      - 443:443
+    depends_on:
+      - reactpj
+  reactpj:
+    container_name: reactpj
+    restart: always
+    build: ./frontend/periodico
+    volumes:
+      - ./frontend/periodico:/home/node/app
+      - /home/node/app/node_modules
+    ports:
+      - 8000:8000
+    depends_on:
+      - nodepj
   nodepj:
     container_name: nodepj
     restart: always

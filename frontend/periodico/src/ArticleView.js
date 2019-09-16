@@ -9,14 +9,14 @@ class ArticleView extends Component {
     }
     
     componentDidMount(){
-        fetch('http://backtelematica.josemejiao.info/articles/'+this.props.match.params.articleId)
+        fetch('/api/articles/'+this.props.match.params.articleId)
         .then(res => res.json())
         .then((data) => {
             this.setState({ article: data })
         })
         .catch(console.log)
 
-        fetch('http://backtelematica.josemejiao.info/comments/'+this.props.match.params.articleId)
+        fetch('/api/comments/'+this.props.match.params.articleId)
         .then(res => res.json())
         .then((data) => {
             this.setState({ comments: data })

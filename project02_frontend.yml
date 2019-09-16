@@ -1,4 +1,4 @@
-version: '3.5'
+version: '3'
 
 services:
   nginx-server:
@@ -7,71 +7,16 @@ services:
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf:ro
     ports:
-      - "80:80"
-      - "443:443"
-    networks:
-      - nodenet
+      - 80:80
+      - 443:443
     depends_on:
       - reactpj
-      - nodepj
-      - projectdb
   reactpj:
     container_name: reactpj
-    image: nodejs
     restart: always
-    build:
-      context: .
-      dockerfile: ./backend/Dockerfile
+    build: ./frontend/periodico
     volumes:
-      - ./frontend:/home/node/app
-      - ./frontend/node_modules:/home/node/app/node_modules
+      - ./frontend/periodico:/home/node/app
+      - /home/node/app/node_modules
     ports:
-      - "8000:8000"
-    command: npm start --prefix /home/node/app/periodico
-    networks:
-      - nodenet
-      - mongonet
-    depends_on:
-      - nodepj
-      - projectdb
-  nodepj:
-    container_name: nodepj
-    image: nodejs
-    restart: always
-    build:
-      context: .
-      dockerfile: ./frontend/Dockerfile
-    volumes:
-      - ./backend:/home/node/app
-      - ./backend/node_modules:/home/node/app/node_modules
-    expose:
-      - 3000
-    ports:
-      - "3000:3000"
-    command: npm start --prefix /home/node/app
-    networks:
-      - nodenet
-      - mongonet
-    depends_on:
-      - projectdb
-  projectdb:
-    container_name: projectdb
-    image: mongo
-    restart: always
-    expose:
-      - 27017
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: jmejiao5
-      MONGO_INITDB_ROOT_PASSWORD: fsfRAJ87
-      MONGO_INITDB_DATABASE: project01
-    ports:
-      - "127.0.0.1:27017:27017"
-    networks:
-      - mongonet
-    volumes:
-      - ./database/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
-networks:
-  mongonet:
-    name: mongonet
-  nodenet:
-    name: nodenet
+      - 8000:8000
