@@ -11,6 +11,7 @@ services:
       - 443:443
     depends_on:
       - reactpj
+      - nodepj
   reactpj:
     container_name: reactpj
     restart: always
