@@ -1,0 +1,62 @@
+version: '3'
+
+services:
+  nginx-server:
+    container_name: nginx-server
+    image: nginx
+    # build:
+    #   context: .
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - 80:80
+      - 443:443
+    depends_on:
+      - react-front
+      - node-api
+      - projectdb
+    links:
+      - node-api
+      - react-front
+    networks:
+      - topicos
+  react-front:
+    container_name: react-front
+    restart: always
+    build:
+      context: ./frontend
+      dockerfile: ./Dockerfile
+    volumes:
+      - ./frontend:/home/node/app
+      - /home/node/app/node_modules
+    ports:
+      - 8000:8000
+    networks:
+      - topicos
+    depends_on:
+      - node-api
+      - projectdb
+    links:
+      - node-api
+  node-api:
+    container_name: node-api
+    restart: always
+    build:
+      context: ./backend
+      dockerfile: ./Dockerfile
+    volumes:
+      - ./backend:/home/node/app
+      - /home/node/app/node_modules
+    ports:
+      - 3000:3000
+    networks:
+      - topicos
+    links:
+      - projectdb
+    depends_on:
+      - projectdb
+networks:
+  topicos:
+    driver: bridge
+    driver_opts:
+      com.docker.network.enable_ipv6: "false"
