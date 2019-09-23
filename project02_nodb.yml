@@ -12,12 +12,12 @@ services:
       - 80:80
       - 443:443
     depends_on:
-      - react-front
+      # - react-front
       - node-api
-      - projectdb
+      # - projectdb
     links:
       - node-api
-      - react-front
+      # - react-front
     networks:
       - topicos
   # react-front:
