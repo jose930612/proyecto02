@@ -12,32 +12,32 @@ services:
       - 80:80
       - 443:443
     depends_on:
-      - react-front
+      # - react-front
       - node-api
-      - projectdb
+      # - projectdb
     links:
       - node-api
-      - react-front
+      # - react-front
     networks:
       - topicos
-  react-front:
-    container_name: react-front
-    restart: always
-    build:
-      context: ./frontend
-      dockerfile: ./Dockerfile
-    volumes:
-      - ./frontend:/home/node/app
-      - /home/node/app/node_modules
-    ports:
-      - 8000:8000
-    networks:
-      - topicos
-    depends_on:
-      - node-api
-      - projectdb
-    links:
-      - node-api
+  # react-front:
+  #   container_name: react-front
+  #   restart: always
+  #   build:
+  #     context: ./frontend
+  #     dockerfile: ./Dockerfile
+  #   volumes:
+  #     - ./frontend:/home/node/app
+  #     - /home/node/app/node_modules
+  #   ports:
+  #     - 8000:8000
+  #   networks:
+  #     - topicos
+  #   depends_on:
+  #     - node-api
+  #     - projectdb
+  #   links:
+  #     - node-api
   node-api:
     container_name: node-api
     restart: always
@@ -51,10 +51,10 @@ services:
       - 3000:3000
     networks:
       - topicos
-    links:
-      - projectdb
-    depends_on:
-      - projectdb
+    # links:
+    #   - projectdb
+    # depends_on:
+    #   - projectdb
 networks:
   topicos:
     driver: bridge
