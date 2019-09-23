@@ -10,6 +10,7 @@ services:
     ports:
       - 3000:3000
 networks:
-  default:
-    external:
-      name: database_topicos
+  topicos:
+    driver: bridge
+    driver_opts:
+      com.docker.network.enable_ipv6: "false"
