@@ -23,7 +23,7 @@ function sleep(milliseconds) {
 }
 console.log('Dude wait!');
 sleep(10000);
-mongoose.connect('mongodb://jmejiao5:fsfRAJ87@projectdb:27017/project01', { useNewUrlParser: true }).then(() => {
+mongoose.connect('mongodb://jmejiao5:fsfRAJ87@172.31.87.47:27017/project01', { useNewUrlParser: true }).then(() => {
     console.log("Connected to Database");
     }).catch((err) => {
         console.error("Not Connected to Database ERROR! ");
