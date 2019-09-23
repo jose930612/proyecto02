@@ -41,7 +41,7 @@ class CommentForm extends Component {
             article: this.props.articleID
         };
         
-        fetch('http://node-api:3000/comments/'+this.props.articleID+'', {
+        fetch('/api/comments/'+this.props.articleID+'', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

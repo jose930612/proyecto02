@@ -12,7 +12,7 @@ class ArticleList extends Component {
         this.updateState = this.updateState.bind(this);
     }
     updateState(e){
-        fetch('http://node-api:3000/articles')
+        fetch('/api/articles')
         .then(res => res.json())
         .then((data) => {
             this.setState({ articles: data })
@@ -20,7 +20,7 @@ class ArticleList extends Component {
         .catch(console.log)
     }
     componentDidMount(){
-        fetch('http://node-api:3000/articles')
+        fetch('/api/articles')
         .then(res => res.json())
         .then((data) => {
             this.setState({ articles: data })

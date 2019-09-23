@@ -28,7 +28,7 @@ class ArticleForm extends Component {
             body: this.state.articleBody
         };
         
-        fetch('http://node-api:3000/articles', {
+        fetch('/api/articles', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
