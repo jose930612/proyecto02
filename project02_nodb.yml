@@ -51,10 +51,10 @@ services:
       - 3000:3000
     networks:
       - topicos
-    links:
-      - projectdb
-    depends_on:
-      - projectdb
+    # links:
+    #   - projectdb
+    # depends_on:
+    #   - projectdb
 networks:
   topicos:
     driver: bridge
