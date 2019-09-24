@@ -2,9 +2,9 @@
 
 1. Nombres integrantes / email institucional :
 
-Andrea González Osorio agonza84@eafit.edu.co
-Jose alberto Mejía Osorio  jmejiao5@eafit.edu.co
-Jhoany Londoño Toro  jlondo97@eafit.edu.co
+    * Andrea González Osorio agonza84@eafit.edu.co
+    * Jose alberto Mejía Osorio  jmejiao5@eafit.edu.co
+    * Jhoany Londoño Toro  jlondo97@eafit.edu.co
 
 2. Asignación de roles y responsabilidades de cada integrante del equipo en el desarrollo del proyecto 2:
 
