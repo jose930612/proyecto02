@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import Topbar from "./Topbar.js";
 import Comments from "./Comments.js";
 
-class ArticleView extends React.PureComponent {
+class ArticleView extends PureComponent {
   state = {
     article: {},
     comments: []

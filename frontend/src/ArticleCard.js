@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 const ArticleCard = ({ article }) => (
   <div className="article__item" data-article-id={article._id}>

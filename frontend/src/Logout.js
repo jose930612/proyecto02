@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import { GoogleLogout } from "react-google-login";
 
 class Logout extends PureComponent {

@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import ArticleCard from "./ArticleCard.js";
 import ArticleForm from "./ArticleForm.js";
 
-class ArticleList extends React.PureComponent {
+class ArticleList extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
