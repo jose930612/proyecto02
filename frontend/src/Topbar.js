@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 
-function Topbar(){
-    return(
-        <div className="topbar">
-            <a href="/">Atras</a>
-        </div>
-    )
+function Topbar() {
+  return (
+    <div className="topbar">
+      <a href="/">Atras</a>
+    </div>
+  );
 }
 
-export default Topbar;
+export default React.memo(Topbar);
