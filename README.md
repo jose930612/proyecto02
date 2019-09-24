@@ -22,8 +22,8 @@ Jhoany Londoño Toro  jlondo97@eafit.edu.co
 
 5. Diseño para la escalabilidad (disponibilidad, rendimiento y seguridad)
     - [Disponibilidad](https://docs.google.com/document/d/1dF2Bl6wX-K8xlgnyMB7GI2oBqESZKtDBqMTW6Txrdcg/edit?usp=sharing)
-    - [Rendimiento] (https://docs.google.com/document/d/16FYOtXrs6MkzfjhXEZLXa6K6Zq01XJghMc0PWpM_HTI/edit?usp=sharing)
-    - [Seguridad] (https://docs.google.com/document/d/1-LkwN70gugmant_LzWnMR3Lv5VHVhYHJGYON8rZq7P8/edit?usp=sharing)
+    - [Rendimiento](https://docs.google.com/document/d/16FYOtXrs6MkzfjhXEZLXa6K6Zq01XJghMc0PWpM_HTI/edit?usp=sharing)
+    - [Seguridad](https://docs.google.com/document/d/1-LkwN70gugmant_LzWnMR3Lv5VHVhYHJGYON8rZq7P8/edit?usp=sharing)
 
 7. Otra información que considere relevante, innovadora o diferenciadora en el desarrollo del proyecto02.
 
